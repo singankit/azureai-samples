@@ -21,7 +21,7 @@ class ModelEndpoint:
 
         client = AzureOpenAI(
             azure_endpoint=self.env["azure_endpoint"],
-            api_version="2024-06-01",
+            api_version=self.env["api_version"],
             azure_ad_token_provider=token_provider,
         )
         # Call the model
