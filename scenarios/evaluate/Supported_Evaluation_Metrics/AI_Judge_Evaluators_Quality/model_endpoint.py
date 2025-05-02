@@ -7,7 +7,6 @@ from openai import AzureOpenAI
 class ModelEndpoint:
     def __init__(self: Self, env: dict) -> None:
         self.env = env
-        print(self.env)
 
     class Response(TypedDict):
         query: str
@@ -42,4 +41,4 @@ class ModelEndpoint:
             stream=False,
         )
         output = completion.to_dict()
-        return {"query": query, "response": output["choices"][0]["message"]["content"]}
+        return {"response": output["choices"][0]["message"]["content"]}
